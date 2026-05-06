@@ -1,9 +1,9 @@
 import db_manager
-from menu import show_main_menu
-from menu_authors import menu_authors
-from menu_publications import menu_publications
-from menu_references import menu_references
-from menu_reports import menu_reports
+from ui.menu import show_main_menu
+from ui.menu_authors import menu_authors
+from ui.menu_publications import menu_publications
+from ui.menu_references import menu_references
+from ui.menu_reports import menu_reports
 def main():
     while True:
         user_choice = show_main_menu()
