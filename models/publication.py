@@ -1,4 +1,4 @@
-from db_manager import get_connection
+from database.db_manager import get_connection
 class Publication:
     def __init__(self, id=None, title=None, date=None, doi=None, link=None, type_id=None, source_id=None, status_id=None,  authorship_id=None):
         self.id = id
