@@ -1,6 +1,4 @@
-from db_manager import get_connection
-from db_manager import get_connection
-
+from database.db_manager import get_connection
 
 class Author:
     def __init__(self, id=None, name=None, surname=None, middle_name=None, position=None, department=None, email=None):
