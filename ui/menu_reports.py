@@ -1,8 +1,8 @@
-from reports import (
+from models.reports import (
     get_publication_count_by_author,
     get_publication_count_by_type,
     get_publication_count_by_status)
-from publication import get_publications_full_info
+from models.publication import get_publications_full_info
 
 
 def menu_reports():
