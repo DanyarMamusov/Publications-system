@@ -1,5 +1,6 @@
-from db_manager import get_connection
-from author import Author
+from database.db_manager import get_connection
+from models.author import Author
+
 class Authorship:
     def __init__(self, id=None, author_id=None ):
         self.id = id
