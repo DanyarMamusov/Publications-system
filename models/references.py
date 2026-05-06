@@ -1,4 +1,4 @@
-from db_manager import get_connection
+from database.db_manager import get_connection
 
 def get_all_publication_types():
     """Возвращает все типы публикаций"""
