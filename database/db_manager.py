@@ -1,5 +1,5 @@
 import sqlite3
-from config import DB_NAME
+from database.config import DB_NAME
 def get_connection():
     return sqlite3.connect(DB_NAME)
 conn = get_connection()
