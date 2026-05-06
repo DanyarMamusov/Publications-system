@@ -1,4 +1,4 @@
-from author import Author, get_all_authors, get_author_by_id
+from models.author import Author, get_all_authors, get_author_by_id
 def menu_authors():
     while True:
         print("\n=== Управление авторами ===")
