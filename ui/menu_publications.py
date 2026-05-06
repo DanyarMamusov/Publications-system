@@ -1,11 +1,11 @@
-from author import get_all_authors
-from authorship import Authorship
-from publication import (
+from models.author import get_all_authors
+from models.authorship import Authorship
+from models.publication import (
     Publication,
     get_publication_by_id,
     get_publications_full_info,
     update_publication_status)
-from references import (
+from models.references import (
     get_all_publication_types,
     get_all_publication_sources,
     get_all_publication_statuses,
