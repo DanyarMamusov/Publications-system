@@ -1,4 +1,4 @@
-from references import (
+from models.references import (
     get_all_publication_types,
     add_publication_type,
     delete_publication_type,
