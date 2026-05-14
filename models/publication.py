@@ -41,29 +41,6 @@ class Publication:
             conn.close()
 
 
-def get_all_publications():
-    """Возвращает все публикации"""
-    conn = get_connection()
-    cur = conn.cursor()
-    cur.execute("""SELECT PublicationID, PublicationTitle, Date, DOI, Link, TypeID, SourceID, StatusID, AuthorshipID
-        FROM Publications""")
-    rows = cur.fetchall()
-    conn.close()
-    return [
-        Publication(
-            id=row[0],
-            title=row[1],
-            date=row[2],
-            doi=row[3],
-            link=row[4],
-            type_id=row[5],
-            source_id=row[6],
-            status_id=row[7],
-            authorship_id=row[8])
-        for row in rows
-    ]
-
-
 def get_publication_by_id(publication_id):
     """Возвращает публикацию по ID"""
     conn = get_connection()
