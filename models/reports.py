@@ -1,11 +1,8 @@
-from database.db_manager import get_connection
-
-
+from databse.db_manager import get_connection
 def get_publication_count_by_author():
     """Возвращает количество публикаций по авторам"""
     conn = get_connection()
     cur = conn.cursor()
-
     cur.execute("""
         SELECT (a.Surname || ' ' || a.Name || ' ' || IFNULL(a.Middle_name, '')) AS AuthorName, COUNT(p.PublicationID) AS PublicationCount
         FROM Authors a
@@ -47,3 +44,4 @@ def get_publication_count_by_status():
     rows = cur.fetchall()
     conn.close()
     return rows
+
