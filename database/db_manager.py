@@ -29,11 +29,9 @@ cur.execute('''CREATE TABLE IF NOT EXISTS Authors(
         Email TEXT)''')
 cur.execute('''CREATE TABLE IF NOT EXISTS Users(
          UserID INTEGER PRIMARY KEY AUTOINCREMENT,
-         Login TEXT,
+         Login TEXT UNIQUE,
          Password TEXT,
-         AuthorID INTEGER,
          RoleID INTEGER,
-         FOREIGN KEY (AuthorID) REFERENCES Authors(AuthorID),
          FOREIGN KEY (RoleID) REFERENCES Roles(RoleID))''')
 cur.execute('''CREATE TABLE IF NOT EXISTS Authorship(
          AuthorshipID INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -53,5 +51,10 @@ cur.execute('''CREATE TABLE IF NOT EXISTS Publications(
          FOREIGN KEY (SourceID) REFERENCES Publication_sources(SourceID),
          FOREIGN KEY (StatusID) REFERENCES Publication_statuses(StatusID),
          FOREIGN KEY (AuthorshipID) REFERENCES Authorship (AuthorshipID))''')
+roles = ["Сотрудник", "Ответственный за учет публикаций"]
+for role in roles:
+    cur.execute("SELECT RoleID FROM Roles WHERE RoleName = ?", (role,))
+    if cur.fetchone() is None:
+        cur.execute("INSERT INTO Roles (RoleName) VALUES (?)", (role,))
 conn.commit()
 conn.close()
