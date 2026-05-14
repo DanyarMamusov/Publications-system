@@ -8,7 +8,6 @@ def menu_authors():
         print("4. Удалить автора")
         print("0. Назад в главное меню")
         choice = input("Выберите действие:")
-        
         if choice == "1":
             authors = get_all_authors()
             if not authors:
@@ -16,7 +15,7 @@ def menu_authors():
             else:
                 print("\nСписок авторов:")
                 for author in authors:
-                    print(f"{author.id}. {author.surname} {author.name} {author.middle_name or ''} | Должность: {author.position} Подразделение: {authors.department} Email: {author.email or '-'} ")
+                    print(f"{author.id}. {author.surname} {author.name} {author.middle_name or ''} | Должность: {author.position} Подразделение: {author.department} Email: {author.email or '-'} ")
         elif choice == "2":
             print("\nДобавление автора")
             surname = input("Фамилия: ")
