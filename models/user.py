@@ -1,4 +1,4 @@
-from db_manager import get_connection
+from database.db_manager import get_connection
 class User:
     def __init__(self, id=None, login=None, password=None, role=None):
         self.id = id
