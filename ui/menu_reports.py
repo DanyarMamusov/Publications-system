@@ -3,8 +3,6 @@ from models.reports import (
     get_publication_count_by_type,
     get_publication_count_by_status)
 from models.publication import get_publications_full_info
-
-
 def menu_reports():
     while True:
         print("\n=== Отчеты и статистика ===")
